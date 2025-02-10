@@ -5,6 +5,27 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      nextRideDate:
+        description: 'Next Ride Date'
+        required: true
+        default: ''
+      nextRideTime:
+        description: 'Next Ride Time'
+        required: true
+        default: ''
+      nextRideLocation:
+        description: 'Next Ride Location'
+        required: true
+        default: ''
+      nextRideStravaRouteUrl:
+        description: 'Next Ride Strava Route URL'
+        required: true
+        default: ''
+      nextRideInfo:
+        description: 'Next Ride Info'
+        required: true
+        default: ''
 
 jobs:
   update-config:
@@ -20,11 +41,11 @@ jobs:
 
       - name: Update next.config.js
         run: |
-          sed -i 's/nextRideDate: .*/nextRideDate: '\''${{ secrets.NEXT_RIDE_DATE }}'\'',/' next.config.js
-          sed -i 's/nextRideTime: .*/nextRideTime: '\''${{ secrets.NEXT_RIDE_TIME }}'\'',/' next.config.js
-          sed -i 's/nextRideLocation: .*/nextRideLocation: '\''${{ secrets.NEXT_RIDE_LOCATION }}'\'',/' next.config.js
-          sed -i 's/nextRideStravaRouteUrl: .*/nextRideStravaRouteUrl: '\''${{ secrets.NEXT_RIDE_STRAVA_ROUTE_URL }}'\'',/' next.config.js
-          sed -i 's/nextRideInfo: .*/nextRideInfo: '\''${{ secrets.NEXT_RIDE_INFO }}'\'',/' next.config.js
+          sed -i 's/nextRideDate: .*/nextRideDate: '\''${{ github.event.inputs.nextRideDate }}'\'',/' next.config.js
+          sed -i 's/nextRideTime: .*/nextRideTime: '\''${{ github.event.inputs.nextRideTime }}'\'',/' next.config.js
+          sed -i 's/nextRideLocation: .*/nextRideLocation: '\''${{ github.event.inputs.nextRideLocation }}'\'',/' next.config.js
+          sed -i 's/nextRideStravaRouteUrl: .*/nextRideStravaRouteUrl: '\''${{ github.event.inputs.nextRideStravaRouteUrl }}'\'',/' next.config.js
+          sed -i 's/nextRideInfo: .*/nextRideInfo: '\''${{ github.event.inputs.nextRideInfo }}'\'',/' next.config.js
 
       - name: Commit changes
         run: |

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   update-config:
@@ -22,6 +23,8 @@ jobs:
           sed -i 's/nextRideDate: .*/nextRideDate: '\''${{ secrets.NEXT_RIDE_DATE }}'\'',/' next.config.js
           sed -i 's/nextRideTime: .*/nextRideTime: '\''${{ secrets.NEXT_RIDE_TIME }}'\'',/' next.config.js
           sed -i 's/nextRideLocation: .*/nextRideLocation: '\''${{ secrets.NEXT_RIDE_LOCATION }}'\'',/' next.config.js
+          sed -i 's/nextRideStravaRouteUrl: .*/nextRideStravaRouteUrl: '\''${{ secrets.NEXT_RIDE_STRAVA_ROUTE_URL }}'\'',/' next.config.js
+          sed -i 's/nextRideInfo: .*/nextRideInfo: '\''${{ secrets.NEXT_RIDE_INFO }}'\'',/' next.config.js
 
       - name: Commit changes
         run: |

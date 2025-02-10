@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import Image from "next/image";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
@@ -19,9 +19,9 @@ export default function Home() {
         </div>
         <div className={styles.nextRide}>
           <h2>Next Ride</h2>
-          <p>Date: {nextRideDate}</p>
-          <p>Time: {nextRideTime}</p>
-          <p>Meeting Location: {nextRideLocation}</p>
+          <p><FaCalendarAlt /> {nextRideDate}</p>
+          <p><FaClock /> {nextRideTime}</p>
+          <p><FaMapMarkerAlt /> {nextRideLocation}</p>
         </div>
       </main>
       <footer className={styles.footer}>

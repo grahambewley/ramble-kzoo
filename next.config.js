@@ -1,9 +1,9 @@
 module.exports = {
   publicRuntimeConfig: {
-    nextRideDate: '',
-    nextRideTime: '',
-    nextRideLocation: '',
-    nextRideStravaRouteUrl: '',
-    nextRideInfo: '',
+    nextRideDate: '5768',
+    nextRideTime: '33333',
+    nextRideLocation: 'placeplaceplaceplace',
+    nextRideStravaRouteUrl: 'linklink',
+    nextRideInfo: 'This is the information',
   },
 };

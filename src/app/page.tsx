@@ -22,7 +22,7 @@ export default function Home() {
             <p>{nextRideDate}</p>
           </div>
           <div className={styles.infoWrapper}>
-          <FaClock className={styles.icon} />
+            <FaClock className={styles.icon} />
             <p>{nextRideTime}</p>
           </div>
           <div className={styles.infoWrapper}>
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
           <div className={styles.buttonContainer}>
             <a href={nextRideStravaRouteUrl} target="_blank" className={styles.linkButton}>Strava Route</a>
-            <a href="https://strava.app.link/EOnnVuoUSQb" target="_blank" className={`${styles.linkButton} ${styles.joinClub}`}>Join the Club!</a>
+            <a href="https://strava.app.link/EOnnVuoUSQb" target="_blank" className={`${styles.linkButton} ${styles.outlineButton}`}>Join the Club!</a>
           </div>
         </div>
       </main>

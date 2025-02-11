@@ -41,11 +41,11 @@ jobs:
 
       - name: Update next.config.js
         run: |
-          sed -i 's/nextRideDate: .*/nextRideDate: '\''${{ github.event.inputs.nextRideDate }}'\'',/' next.config.js
-          sed -i 's/nextRideTime: .*/nextRideTime: '\''${{ github.event.inputs.nextRideTime }}'\'',/' next.config.js
-          sed -i 's/nextRideLocation: .*/nextRideLocation: '\''${{ github.event.inputs.nextRideLocation }}'\'',/' next.config.js
-          sed -i 's/nextRideStravaRouteUrl: .*/nextRideStravaRouteUrl: '\''${{ github.event.inputs.nextRideStravaRouteUrl }}'\'',/' next.config.js
-          sed -i 's/nextRideInfo: .*/nextRideInfo: '\''${{ github.event.inputs.nextRideInfo }}'\'',/' next.config.js
+          sed -i 's|nextRideDate: .*|nextRideDate: '\''${{ github.event.inputs.nextRideDate }}'\'',|' next.config.js
+          sed -i 's|nextRideTime: .*|nextRideTime: '\''${{ github.event.inputs.nextRideTime }}'\'',|' next.config.js
+          sed -i 's|nextRideLocation: .*|nextRideLocation: '\''${{ github.event.inputs.nextRideLocation }}'\'',|' next.config.js
+          sed -i 's|nextRideStravaRouteUrl: .*|nextRideStravaRouteUrl: '\''${{ github.event.inputs.nextRideStravaRouteUrl }}'\'',|' next.config.js
+          sed -i 's|nextRideInfo: .*|nextRideInfo: '\''${{ github.event.inputs.nextRideInfo }}'\'',|' next.config.js
 
       - name: Commit changes
         run: |

@@ -31,6 +31,7 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -38,7 +39,6 @@
 
 .linkButton:hover {
   background-color: #d94400;
-  /* Adjusted hover color for consistency */
 }
 
 .linkButton.outlineButton {

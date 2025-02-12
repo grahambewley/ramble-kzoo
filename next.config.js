@@ -1,9 +1,9 @@
 module.exports = {
   publicRuntimeConfig: {
-    nextRideDate: 'March 3, 2025',
-    nextRideTime: '10 AM',
+    nextRideDate: 'March 9, 2025',
+    nextRideTime: '11AM',
     nextRideLocation: 'Bronson Park',
-    nextRideStravaRouteUrl: 'https://www.strava.com/routes/3295424537735572606',
-    nextRideInfo: 'Meet at Bronson Park, grab any coffee supplies we may need from Factory, then a ride down the Kal-Haven to make coffee in the woods.',
+    nextRideStravaRouteUrl: 'https://strava.app.link/vtzLeBl5SQb',
+    nextRideInfo: 'Meet at Bronson Park, ride down the Kal-Haven, make coffee in the woods',
   },
 };

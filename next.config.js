@@ -1,9 +1,9 @@
 module.exports = {
   publicRuntimeConfig: {
-    nextRideDate: 'June 8, 2025',
+    nextRideDate: 'June 22',
     nextRideTime: '11 AM',
-    nextRideLocation: 'Bronson Park',
-    nextRideStravaRouteUrl: 'https://www.strava.com/clubs/1190379/group_events/2065121',
-    nextRideInfo: 'Meet at Bronson Park. Ride out towards Portage via the Bicentennial Trail. Coffee and chat around the halfway point in Celery Flats.',
+    nextRideLocation: 'Bronson Park ',
+    nextRideStravaRouteUrl: 'https://strava.app.link/R8MUTlAGdUb',
+    nextRideInfo: 'Back out onto some country roads. Bring your thermos!',
   },
 };

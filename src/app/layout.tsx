@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand, Knewave } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const knewave = Knewave({
+  variable: "--font-header",
+  weight: "400",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "The Ramble | Kalamazoo, MI",
-  description: "The Ramble is a group of cyclists in Kalamazoo, MI who enjoy riding bikes and drinking coffee.",
+  description:
+    "Weekly group rides in Kalamazoo, MI — Mondays and Thursdays.",
 };
 
 export default function RootLayout({
@@ -24,7 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+      </head>
+      <body
+        className={`${quicksand.variable} ${knewave.variable}`}
+      >
         {children}
       </body>
     </html>

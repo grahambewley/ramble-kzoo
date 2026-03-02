@@ -65,12 +65,12 @@
 
 .heroTitle {
   font-family: var(--font-header), cursive;
-  font-size: 14rem;
+  font-size: 15rem;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
   color: #000;
-  margin-top: 0.4in;
+  margin-top: 0.6in;
 }
 
 
@@ -87,8 +87,8 @@
 
 .qr {
   display: block;
-  width: 2.5in;
-  height: 2.5in;
+  width: 1.5in;
+  height: 1.5in;
 }
 
 .rideInfo {
@@ -102,14 +102,14 @@
 
 .rideDay {
   font-family: var(--font-header), cursive;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 400;
   line-height: 1.1;
   margin: 0;
 }
 
 .rideTimeLoc {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   margin: 0;
@@ -117,7 +117,7 @@
 }
 
 .rideTagline {
-  font-size: 0.95rem;
+  font-size: 1.0rem;
   font-weight: 400;
   font-style: italic;
   letter-spacing: 0.01em;

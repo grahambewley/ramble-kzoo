@@ -52,7 +52,7 @@ export default function ThursdaysPage() {
           calendar_month
         </span>
         <div className={styles.detailContent}>
-          <span>Starting March 12, 2026</span>
+          <span>March - ??</span>
           <span className={styles.detailSub}>Weather permitting</span>
         </div>
       </div>

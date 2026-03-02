@@ -34,7 +34,7 @@ export default function MondaysPage() {
             <strong>6 PM – 8 PM ish</strong>
           </span>
           <span className={styles.detailSub}>
-            Food and drink nearby if we&apos;re keen
+            Restaurants nearby if we&apos;re keen
           </span>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function MondaysPage() {
           calendar_month
         </span>
         <div className={styles.detailContent}>
-          <span>Starting March 9, 2026</span>
+          <span>March - ??</span>
           <span className={styles.detailSub}>
             Weather and trail conditions permitting
           </span>

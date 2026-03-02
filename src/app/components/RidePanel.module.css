@@ -6,29 +6,27 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem 1.25rem;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   min-height: 0;
-}
-
-/* Collapsed state — entire panel is tappable */
-.collapsed {
+  /* Link reset */
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
 
-.collapsed:active {
+.panel:active {
   transform: scale(0.98);
 }
 
 /* Hover effect only on non-touch devices */
 @media (hover: hover) {
-  .panelDark.collapsed:hover {
+  .panelDark:hover {
     background-color: #1a1a1a;
   }
 
-  .panelLight.collapsed:hover {
+  .panelLight:hover {
     background-color: #f0f0f0;
   }
 }
@@ -49,20 +47,6 @@
   --action-btn-hover-bg: color-mix(in srgb, currentColor 12%, transparent);
 }
 
-/* Expanded state — fullscreen overlay */
-.expanded {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  overflow-y: auto;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: 3rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  cursor: default;
-}
-
 .header {
   font-family: var(--font-header), cursive;
   font-size: clamp(3rem, 12vw, 4rem);
@@ -71,26 +55,11 @@
   letter-spacing: 0.02em;
 }
 
-.expanded .header {
-  text-align: left;
-  padding-left: 1rem;
-}
-
 /* Larger header on wider screens */
 @media (min-width: 769px) {
   .header {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     margin-bottom: 0.35rem;
-  }
-
-  .expanded .header {
-    padding-left: 0;
-    width: 100%;
-    max-width: 600px;
-  }
-
-  .expanded {
-    align-items: center;
   }
 }
 
@@ -133,78 +102,4 @@
   }
 }
 
-.closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  color: inherit;
-  font-size: 1.5rem;
-  cursor: pointer;
-  line-height: 1;
-  padding: 0.5rem;
-  transition: opacity 0.2s ease;
-  z-index: 11;
-}
 
-@media (min-width: 769px) {
-  .closeButton {
-    top: 1.25rem;
-    right: 1.5rem;
-    font-size: 2rem;
-  }
-}
-
-.closeButton:hover {
-  opacity: 0.6;
-}
-
-/* Expanded extra detail content */
-.expandedContent {
-  margin-top: 2rem;
-  max-width: 480px;
-  text-align: left;
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
-  line-height: 1.6;
-  opacity: 0;
-  animation: fadeIn 0.4s 0.25s ease forwards;
-  padding: 0 1rem;
-}
-
-@media (min-width: 769px) {
-  .expandedContent {
-    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-    line-height: 1.7;
-    padding: 0;
-    max-width: 600px;
-  }
-}
-
-.expandedContent h3 {
-  font-family: var(--font-header), cursive;
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-@media (min-width: 769px) {
-  .expandedContent h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-}
-
-.expandedContent p {
-  margin-bottom: 1.5rem;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

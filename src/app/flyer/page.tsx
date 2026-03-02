@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 
 const SITE_URL = "https://ramblekzoo.com";
-const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=4&data=${encodeURIComponent(SITE_URL)}`;
+const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=4&data=${encodeURIComponent(SITE_URL)}`;
 
 export default function FlyerPage() {
   return (
@@ -29,7 +29,7 @@ export default function FlyerPage() {
             <p className={styles.rideTagline}>Un-serious trail ride</p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={styles.qr} src={QR_URL} alt="QR code" width={280} height={280} />
+          <img className={styles.qr} src={QR_URL} alt="QR code" width={400} height={400} />
           <div className={styles.rideInfo}>
             <p className={styles.rideDay}>Thursdays</p>
             <p className={styles.rideTimeLoc}>6PM &middot; Downtown</p>

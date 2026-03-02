@@ -87,8 +87,8 @@
 
 .qr {
   display: block;
-  width: 1.8in;
-  height: 1.8in;
+  width: 2.5in;
+  height: 2.5in;
 }
 
 .rideInfo {
@@ -102,7 +102,7 @@
 
 .rideDay {
   font-family: var(--font-header), cursive;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 1.1;
   margin: 0;

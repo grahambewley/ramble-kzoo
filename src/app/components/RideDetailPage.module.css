@@ -1,0 +1,169 @@
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.pageDark {
+  background-color: #000;
+  color: #fff;
+  --action-btn-bg: color-mix(in srgb, currentColor 12%, transparent);
+  --action-btn-border: color-mix(in srgb, currentColor 30%, transparent);
+  --action-btn-hover-bg: color-mix(in srgb, currentColor 22%, transparent);
+}
+
+.pageLight {
+  background-color: #fff;
+  color: #000;
+  --action-btn-bg: color-mix(in srgb, currentColor 6%, transparent);
+  --action-btn-border: color-mix(in srgb, currentColor 15%, transparent);
+  --action-btn-hover-bg: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.header {
+  font-family: var(--font-header), cursive;
+  font-size: clamp(3rem, 12vw, 4rem);
+  margin: 0 0 0.25rem;
+  text-align: left;
+  letter-spacing: 0.02em;
+  padding-left: 1rem;
+}
+
+@media (min-width: 769px) {
+  .page {
+    align-items: center;
+  }
+
+  .header {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 0.35rem;
+    padding-left: 0;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.closeButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.5rem;
+  transition: opacity 0.2s ease;
+  z-index: 11;
+  text-decoration: none;
+}
+
+@media (min-width: 769px) {
+  .closeButton {
+    top: 1.25rem;
+    right: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+.closeButton:hover {
+  opacity: 0.6;
+}
+
+.content {
+  margin-top: 2rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: left;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  line-height: 1.6;
+  padding: 0 1rem;
+  animation: fadeIn 0.3s ease both;
+}
+
+@media (min-width: 769px) {
+  .content {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    line-height: 1.7;
+    padding: 0;
+    max-width: 600px;
+  }
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Detail rows */
+.detailRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.detailRow :global(.material-symbols-outlined) {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.detailSub {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+/* Call-to-action buttons */
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0 1.75rem;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--action-btn-bg, color-mix(in srgb, currentColor 12%, transparent));
+  border: 1.5px solid var(--action-btn-border, color-mix(in srgb, currentColor 30%, transparent));
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  transition: background-color 0.15s, opacity 0.15s;
+}
+
+.actionButton:hover {
+  background-color: var(--action-btn-hover-bg, color-mix(in srgb, currentColor 22%, transparent));
+}
+
+.inlineLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

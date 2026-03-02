@@ -32,7 +32,7 @@ export default function Home() {
             <div className={styles.detailRow}>
               <span className="material-symbols-outlined" aria-hidden="true">calendar_month</span>
               <div className={styles.detailContent}>
-                <span>April – ???</span>
+                <span>Starting March 9, 2026</span>
                 <span className={styles.detailSub}>Weather and trail conditions permitting</span>
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function Home() {
             <div className={styles.detailRow}>
               <span className="material-symbols-outlined" aria-hidden="true">calendar_month</span>
               <div className={styles.detailContent}>
-                <span>April – ???</span>
+                <span>Starting March 12, 2026</span>
                 <span className={styles.detailSub}>Weather permitting</span>
               </div>
             </div>

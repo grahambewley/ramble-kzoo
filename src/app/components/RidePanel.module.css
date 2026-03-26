@@ -67,7 +67,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  font-size: clamp(1.1rem, 4vw, 1.2rem);
+  font-size: 1.1rem;
   line-height: 1.5;
   text-align: center;
   max-width: 480px;
@@ -76,7 +76,6 @@
 @media (min-width: 769px) {
   .tagline {
     gap: 0.25rem;
-    font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.6;
   }
 }
@@ -100,6 +99,19 @@
   50% {
     opacity: 0.6;
   }
+}
+
+/* Upcoming ride badge */
+.upcomingBadge {
+  margin-top: 1rem;
+  background-color: #c84b11;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
 }
 
 

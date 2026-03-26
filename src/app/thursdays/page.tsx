@@ -1,14 +1,19 @@
 import RideDetailPage from "../components/RideDetailPage";
 import styles from "../components/RideDetailPage.module.css";
+import { getUpcomingRides } from "@/lib/upcoming-rides";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Thursdays | The Ramble",
   description: "Social road ride around Kalamazoo. Thursday evenings, beers after at Alley Cat.",
 };
 
-export default function ThursdaysPage() {
+export default async function ThursdaysPage() {
+  const rides = await getUpcomingRides();
+
   return (
-    <RideDetailPage day="Thursdays" theme="light">
+    <RideDetailPage day="Thursdays" theme="light" upcomingRide={rides.thursdays}>
       <p>
         <em>Social road ride around Kalamazoo. No drop.</em>
       </p>
@@ -52,7 +57,7 @@ export default function ThursdaysPage() {
           calendar_month
         </span>
         <div className={styles.detailContent}>
-          <span>March - ??</span>
+          <span>April - ??</span>
           <span className={styles.detailSub}>Weather permitting</span>
         </div>
       </div>

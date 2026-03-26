@@ -1,0 +1,138 @@
+.page {
+  min-height: 100svh;
+  background-color: #111;
+  color: #eee;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+  font-family: var(--font-body), sans-serif;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-header), cursive;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  margin-bottom: 0.5rem;
+  color: #c84b11;
+}
+
+.intro {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.section {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.input,
+.textarea {
+  background-color: #2a2a2a;
+  border: 1.5px solid #3a3a3a;
+  border-radius: 6px;
+  color: #eee;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.65rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #c84b11;
+}
+
+.textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.saveButton,
+.clearButton {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.saveButton:disabled,
+.clearButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.saveButton {
+  background-color: #c84b11;
+  color: #fff;
+}
+
+.saveButton:not(:disabled):hover {
+  background-color: #a83c0d;
+}
+
+.clearButton {
+  background-color: #333;
+  color: #ccc;
+}
+
+.clearButton:not(:disabled):hover {
+  background-color: #444;
+}
+
+.successMsg {
+  font-size: 0.8rem;
+  color: #6fcf97;
+  font-weight: 600;
+}
+
+.errorMsg {
+  font-size: 0.8rem;
+  color: #eb5757;
+  font-weight: 600;
+}

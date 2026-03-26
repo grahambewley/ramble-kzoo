@@ -6,6 +6,12 @@ interface RidePanelProps {
   theme: "dark" | "light";
   tagline: string;
   href: string;
+  upcomingRideDate?: string;
+}
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr + "T12:00:00");
+  return date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
 }
 
 export default function RidePanel({
@@ -13,6 +19,7 @@ export default function RidePanel({
   theme,
   tagline,
   href,
+  upcomingRideDate,
 }: Readonly<RidePanelProps>) {
   const themeClass = theme === "dark" ? styles.panelDark : styles.panelLight;
 
@@ -30,6 +37,12 @@ export default function RidePanel({
             </p>
           ))}
       </div>
+
+      {upcomingRideDate && (
+        <span className={styles.upcomingBadge}>
+          Upcoming · {formatDate(upcomingRideDate)}
+        </span>
+      )}
 
       <span
         className={`${styles.hint} material-symbols-outlined`}

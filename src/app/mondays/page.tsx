@@ -1,14 +1,19 @@
 import RideDetailPage from "../components/RideDetailPage";
 import styles from "../components/RideDetailPage.module.css";
+import { getUpcomingRides } from "@/lib/upcoming-rides";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Mondays | The Ramble",
   description: "Un-serious trail ride at Al Sabo Nature Preserve. Monday evenings in Kalamazoo, MI.",
 };
 
-export default function MondaysPage() {
+export default async function MondaysPage() {
+  const rides = await getUpcomingRides();
+
   return (
-    <RideDetailPage day="Mondays" theme="dark">
+    <RideDetailPage day="Mondays" theme="dark" upcomingRide={rides.mondays}>
       <p>
         <em>No gods, no masters. Helmets recommended.</em>
       </p>
@@ -56,7 +61,7 @@ export default function MondaysPage() {
           calendar_month
         </span>
         <div className={styles.detailContent}>
-          <span>March - ??</span>
+          <span>April - ??</span>
           <span className={styles.detailSub}>
             Weather and trail conditions permitting
           </span>

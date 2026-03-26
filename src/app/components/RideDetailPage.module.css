@@ -2,7 +2,7 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  padding: 3rem 2rem 2rem;
+  padding: 3rem 2.5rem 2rem;
   box-sizing: border-box;
 }
 
@@ -78,9 +78,9 @@
   max-width: 480px;
   width: 100%;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.925rem;
   line-height: 1.6;
-  padding: 0 1rem;
+  padding: 0;
   animation: fadeIn 0.3s ease both;
 }
 

@@ -3,6 +3,7 @@ import styles from "./RidePanel.module.css";
 
 interface RidePanelProps {
   day: string;
+  subtitle?: string;
   theme: "dark" | "light";
   tagline: string;
   href: string;
@@ -16,6 +17,7 @@ function formatDate(dateStr: string): string {
 
 export default function RidePanel({
   day,
+  subtitle,
   theme,
   tagline,
   href,
@@ -25,6 +27,7 @@ export default function RidePanel({
 
   return (
     <Link href={href} className={`${styles.panel} ${themeClass}`}>
+      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
       <h1 className={styles.header}>{day}</h1>
 
       <div className={styles.tagline}>

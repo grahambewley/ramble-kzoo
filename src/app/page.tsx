@@ -11,6 +11,7 @@ export default async function Home() {
     <div className={styles.container}>
       <RidePanel
         day="Mondays"
+        subtitle="(Typically 1st and 3rd)"
         theme="dark"
         tagline="Un-serious trail ride. Run what ya brung."
         href="/mondays"
@@ -18,6 +19,7 @@ export default async function Home() {
       />
       <RidePanel
         day="Thursdays"
+        subtitle="(Typically 1st and 3rd)"
         theme="light"
         tagline="Ramble around town. Beers after."
         href="/thursdays"

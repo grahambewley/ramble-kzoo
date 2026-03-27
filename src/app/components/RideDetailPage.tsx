@@ -5,6 +5,7 @@ import type { RideData } from "@/lib/upcoming-rides";
 
 interface RideDetailPageProps {
   day: string;
+  subtitle?: string;
   theme: "dark" | "light";
   children: React.ReactNode;
   upcomingRide?: RideData | null;
@@ -12,6 +13,7 @@ interface RideDetailPageProps {
 
 export default function RideDetailPage({
   day,
+  subtitle,
   theme,
   children,
   upcomingRide,
@@ -24,6 +26,7 @@ export default function RideDetailPage({
         ✕
       </Link>
 
+      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
       <h1 className={styles.header}>{day}</h1>
 
       <div className={styles.content}>

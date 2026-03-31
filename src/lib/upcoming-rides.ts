@@ -13,12 +13,21 @@ export interface UpcomingRides {
 const STORE_NAME = "upcoming-rides";
 const KEY = "rides";
 
+function isUpcoming(dateStr: string): boolean {
+  const rideDate = new Date(dateStr + "T23:59:59");
+  return rideDate >= new Date();
+}
+
 export async function getUpcomingRides(): Promise<UpcomingRides> {
   try {
     const store = getStore(STORE_NAME);
     const data = await store.get(KEY, { type: "json" });
     if (!data) return { mondays: null, thursdays: null };
-    return data as UpcomingRides;
+    const rides = data as UpcomingRides;
+    return {
+      mondays: rides.mondays && isUpcoming(rides.mondays.date) ? rides.mondays : null,
+      thursdays: rides.thursdays && isUpcoming(rides.thursdays.date) ? rides.thursdays : null,
+    };
   } catch {
     return { mondays: null, thursdays: null };
   }

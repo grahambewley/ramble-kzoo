@@ -35,7 +35,8 @@ export default async function ThursdaysPage() {
           <span>
             <strong>6 PM – 8 PM ish</strong>
           </span>
-          <span className={styles.detailSub}>Drinks after at Alley Cat</span>
+          <span className={styles.detailSub}>Sun
+bject to change, see above for specific ride time</span>
         </div>
       </div>
       <div className={styles.detailRow}>
@@ -44,7 +45,7 @@ export default async function ThursdaysPage() {
         </span>
         <div className={styles.detailContent}>
           <span>
-            <strong>Alley Cat, Downtown Kalamazoo</strong>
+            <strong>Rotating Bars & Breweries, see event for specifics</strong>
           </span>
           <span className={styles.detailSub}>Meet out front</span>
         </div>

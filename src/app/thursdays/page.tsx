@@ -44,9 +44,9 @@ export default async function ThursdaysPage() {
         </span>
         <div className={styles.detailContent}>
           <span>
-            <strong>Rotating Bars & Breweries, see event for specifics</strong>
+            <strong>Rotating Bars & Breweries</strong>
           </span>
-          <span className={styles.detailSub}>Meet out front</span>
+          <span className={styles.detailSub}>Subject to change. See specific event details above.</span>
         </div>
       </div>
       <div className={styles.detailRow}>

@@ -16,9 +16,7 @@ function formatDate(dateStr: string): string {
 }
 
 export default function UpcomingRide({ ride }: UpcomingRideProps) {
-  if (!ride) return null;
-
-  const label = formatDate(ride.date);
+  const label = ride ? formatDate(ride.date) : "No upcoming rides scheduled, check back later";
 
   return (
     <div className={styles.wrapper}>
@@ -27,7 +25,7 @@ export default function UpcomingRide({ ride }: UpcomingRideProps) {
         <span className={styles.dateLabel}>{label}</span>
       </div>
 
-      {ride.details && (
+      {ride?.details && (
         <div className={styles.details}>{ride.details}</div>
       )}
     </div>

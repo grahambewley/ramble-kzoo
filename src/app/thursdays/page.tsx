@@ -35,8 +35,7 @@ export default async function ThursdaysPage() {
           <span>
             <strong>6 PM – 8 PM ish</strong>
           </span>
-          <span className={styles.detailSub}>Sun
-bject to change, see above for specific ride time</span>
+          <span className={styles.detailSub}>Subject to change with the seasons, see above for specific ride time</span>
         </div>
       </div>
       <div className={styles.detailRow}>

@@ -13,7 +13,7 @@ export default async function ThursdaysPage() {
   const rides = await getUpcomingRides();
 
   return (
-    <RideDetailPage day="Thursdays" subtitle="(Typically 1st and 3rd)" theme="light" upcomingRide={rides.thursdays}>
+    <RideDetailPage day="Thursdays" subtitle="(Typically 2nd and 4th)" theme="light" upcomingRide={rides.thursdays}>
       <div className={styles.buttonRow}>
         <a href="sms:2482284611" className={styles.actionButton}>
           Text me (Graham)

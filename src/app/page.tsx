@@ -19,7 +19,7 @@ export default async function Home() {
       />
       <RidePanel
         day="Thursdays"
-        subtitle="(Typically 1st and 3rd)"
+        subtitle="(Typically 2nd and 4th)"
         theme="light"
         tagline="Ramble around town. Beers after."
         href="/thursdays"

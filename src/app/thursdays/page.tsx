@@ -15,31 +15,6 @@ export default async function ThursdaysPage() {
 
   return (
     <RideDetailPage day="Thursdays" subtitle="(Typically 2nd and 4th)" theme="light" upcomingRide={rides.thursdays}>
-      <div className={styles.buttonRow}>
-        <a href="sms:2482284611" className={styles.actionButton}>
-          Text me (Graham)
-        </a>
-        <a
-          href="https://www.instagram.com/graham.bewley/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.actionButton}
-        >
-          DM me
-        </a>
-      </div>
-      <RideSignupForm defaultRides={["thursdays"]} theme="light" />
-      <div className={styles.detailRow}>
-        <span className="material-symbols-outlined" aria-hidden="true">
-          schedule
-        </span>
-        <div className={styles.detailContent}>
-          <span>
-            <strong>6 PM – 8 PM ish</strong>
-          </span>
-          <span className={styles.detailSub}>Subject to change with the seasons, see above for specific ride time</span>
-        </div>
-      </div>
       <div className={styles.detailRow}>
         <span className="material-symbols-outlined" aria-hidden="true">
           location_on
@@ -51,38 +26,13 @@ export default async function ThursdaysPage() {
           <span className={styles.detailSub}>Subject to change. See specific event details above.</span>
         </div>
       </div>
-      <div className={styles.detailRow}>
-        <span className="material-symbols-outlined" aria-hidden="true">
-          calendar_month
-        </span>
-        <div className={styles.detailContent}>
-          <span>April - ??</span>
-          <span className={styles.detailSub}>Weather permitting</span>
-        </div>
-      </div>
       <p>
         We&apos;ll meet downtown and go pedal for 10-15 miles. Conversational
         pace. There are some excellent roads just outside of town that we&apos;ll
         try to get out to if we can.
       </p>
       <p>Gather afterwards for a beer or two. Alley Cat is a favorite.</p>
-      <p>
-        Don&apos;t be a stranger. If you&apos;re curious about the ride, I hope
-        you reach out, feel free to shoot me a{" "}
-        <a href="sms:2482284611" className={styles.inlineLink}>
-          text
-        </a>{" "}
-        or{" "}
-        <a
-          href="https://www.instagram.com/graham.bewley/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.inlineLink}
-        >
-          DM
-        </a>{" "}
-        (I&apos;m Graham 👋)
-      </p>
+      <RideSignupForm defaultRides={["thursdays"]} theme="light" />
     </RideDetailPage>
   );
 }

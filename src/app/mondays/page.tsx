@@ -15,33 +15,6 @@ export default async function MondaysPage() {
 
   return (
     <RideDetailPage day="Mondays" subtitle="(Typically 1st and 3rd)" theme="dark" upcomingRide={rides.mondays}>
-      <div className={styles.buttonRow}>
-        <a href="sms:2482284611" className={styles.actionButton}>
-          Text me (Graham)
-        </a>
-        <a
-          href="https://www.instagram.com/graham.bewley/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.actionButton}
-        >
-          DM me
-        </a>
-      </div>
-      <RideSignupForm defaultRides={["mondays"]} theme="dark" />
-      <div className={styles.detailRow}>
-        <span className="material-symbols-outlined" aria-hidden="true">
-          schedule
-        </span>
-        <div className={styles.detailContent}>
-          <span>
-            <strong>6 PM – 8 PM ish</strong>
-          </span>
-          <span className={styles.detailSub}>
-            Restaurants nearby if we&apos;re keen
-          </span>
-        </div>
-      </div>
       <div className={styles.detailRow}>
         <span className="material-symbols-outlined" aria-hidden="true">
           location_on
@@ -52,17 +25,6 @@ export default async function MondaysPage() {
           </span>
           <span className={styles.detailSub}>
             Meet in the trailhead parking lot
-          </span>
-        </div>
-      </div>
-      <div className={styles.detailRow}>
-        <span className="material-symbols-outlined" aria-hidden="true">
-          calendar_month
-        </span>
-        <div className={styles.detailContent}>
-          <span>April - ??</span>
-          <span className={styles.detailSub}>
-            Weather and trail conditions permitting
           </span>
         </div>
       </div>
@@ -82,23 +44,7 @@ export default async function MondaysPage() {
         Post-ride, there are some restaurant/bars in Texas Corners that are
         accessible via the adjacent bike path if we&apos;re up for it.
       </p>
-      <p>
-        Don&apos;t be a stranger. If you&apos;re curious about the ride, I hope
-        you reach out, feel free to shoot me a{" "}
-        <a href="sms:2482284611" className={styles.inlineLink}>
-          text
-        </a>{" "}
-        or{" "}
-        <a
-          href="https://www.instagram.com/graham.bewley/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.inlineLink}
-        >
-          DM
-        </a>{" "}
-        (I&apos;m Graham 👋)
-      </p>
+      <RideSignupForm defaultRides={["mondays"]} theme="dark" />
     </RideDetailPage>
   );
 }

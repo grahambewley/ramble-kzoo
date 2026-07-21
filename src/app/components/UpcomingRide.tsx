@@ -3,6 +3,7 @@ import type { RideData } from "@/lib/upcoming-rides";
 
 interface UpcomingRideProps {
   ride: RideData | null;
+  theme?: "dark" | "light";
 }
 
 function formatDate(dateStr: string): string {
@@ -15,8 +16,9 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export default function UpcomingRide({ ride }: UpcomingRideProps) {
+export default function UpcomingRide({ ride, theme = "dark" }: Readonly<UpcomingRideProps>) {
   const label = ride ? formatDate(ride.date) : "No upcoming rides scheduled, check back later";
+  const detailsClass = `${styles.details} ${theme === "light" ? styles.detailsLight : ""}`;
 
   return (
     <div className={styles.wrapper}>
@@ -26,7 +28,7 @@ export default function UpcomingRide({ ride }: UpcomingRideProps) {
       </div>
 
       {ride?.details && (
-        <div className={styles.details}>{ride.details}</div>
+        <div className={detailsClass}>{ride.details}</div>
       )}
     </div>
   );

@@ -30,7 +30,7 @@ export default function RideDetailPage({
       <h1 className={styles.header}>{day}</h1>
 
       <div className={styles.content}>
-        <UpcomingRide ride={upcomingRide ?? null} />
+        <UpcomingRide ride={upcomingRide ?? null} theme={theme} />
         {children}
       </div>
     </div>

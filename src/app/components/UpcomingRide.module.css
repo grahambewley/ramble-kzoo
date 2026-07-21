@@ -42,3 +42,8 @@
   line-height: 1.6;
   white-space: pre-wrap;
 }
+
+.detailsLight {
+  background-color: rgba(253, 244, 238, 0.96);
+  color: #1a100c;
+}

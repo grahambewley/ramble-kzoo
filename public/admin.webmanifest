@@ -1,0 +1,29 @@
+{
+  "name": "Ramble Admin",
+  "short_name": "Ramble Admin",
+  "description": "Admin console for The Ramble.",
+  "start_url": "/admin",
+  "display": "standalone",
+  "background_color": "#1a100c",
+  "theme_color": "#c84b11",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

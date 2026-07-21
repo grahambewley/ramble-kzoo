@@ -23,6 +23,57 @@
   line-height: 1.5;
 }
 
+.lockBar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.lockBar .label {
+  flex: 1;
+  min-width: 200px;
+}
+
+.locked {
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(0.4);
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1.5px solid #2a2a2a;
+}
+
+.tab {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #999;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0.4rem;
+  margin-bottom: -1.5px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: #ddd;
+}
+
+.tabActive {
+  color: #c84b11;
+  border-bottom-color: #c84b11;
+}
+
 .section {
   background-color: #1c1c1c;
   border-radius: 10px;
@@ -151,20 +202,6 @@
   font-size: 0.8rem;
   color: #eb5757;
   font-weight: 600;
-}
-
-.navLink {
-  display: inline-block;
-  color: #c84b11;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  margin-bottom: 1.25rem;
-}
-
-.navLink:hover {
-  text-decoration: underline;
 }
 
 .subList {

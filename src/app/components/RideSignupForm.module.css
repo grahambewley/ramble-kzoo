@@ -1,0 +1,185 @@
+.spacer {
+  height: 56px;
+}
+
+.inlineBox {
+  border: 1.5px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 10px;
+  padding: 1.25rem;
+  background-color: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  border-top: 3px solid #c84b11;
+  backdrop-filter: blur(10px);
+  animation: slideUp 0.3s ease both;
+}
+
+.bannerDark {
+  background-color: rgba(28, 22, 18, 0.94);
+  color: #fff;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.45);
+}
+
+.bannerLight {
+  background-color: rgba(253, 244, 238, 0.96);
+  color: #000;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bellIcon {
+  color: #e8641f;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0 0.75rem;
+  animation: fadeIn 0.2s ease both;
+}
+
+.checkboxRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #c84b11;
+  cursor: pointer;
+}
+
+.entryRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  background-color: color-mix(in srgb, currentColor 8%, transparent);
+  border: 1.5px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 6px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.55rem 0.75rem;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #c84b11;
+}
+
+.submitButton {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  background-color: #c84b11;
+  color: #fff;
+  transition: background-color 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+
+.submitButton:not(:disabled):hover {
+  background-color: #a83c0d;
+}
+
+.submitButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.errorMsg {
+  font-size: 0.85rem;
+  color: #eb5757;
+  font-weight: 600;
+  margin: 0;
+}
+
+.disclosure {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.successRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.6rem 0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

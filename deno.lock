@@ -23,6 +23,7 @@
         "npm:react-dom@19",
         "npm:react-icons@^5.4.0",
         "npm:react@19",
+        "npm:twilio@^5.13.1",
         "npm:typescript@5"
       ]
     }

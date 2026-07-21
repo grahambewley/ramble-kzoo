@@ -56,6 +56,22 @@
   letter-spacing: 0;
 }
 
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.checkboxLabel input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: #c84b11;
+  cursor: pointer;
+}
+
 .input,
 .textarea {
   background-color: #2a2a2a;
@@ -135,4 +151,69 @@
   font-size: 0.8rem;
   color: #eb5757;
   font-weight: 600;
+}
+
+.navLink {
+  display: inline-block;
+  color: #c84b11;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+.subList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.subRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.subRow:last-child {
+  border-bottom: none;
+}
+
+.subPhone {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.subMeta {
+  display: block;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  margin-top: 0.15rem;
+}
+
+.rideTags {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.rideTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f0f0f0;
+  background-color: #c84b11;
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
 }

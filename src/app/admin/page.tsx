@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 type Day = "mondays" | "thursdays";
@@ -11,10 +12,37 @@ interface DayFormState {
   secret: string;
   status: "idle" | "loading" | "success" | "error";
   message: string;
+  notify: boolean;
+  notifyMessage: string;
 }
 
 function defaultState(): DayFormState {
-  return { date: "", details: "", secret: "", status: "idle", message: "" };
+  return {
+    date: "",
+    details: "",
+    secret: "",
+    status: "idle",
+    message: "",
+    notify: false,
+    notifyMessage: "",
+  };
+}
+
+function pluralSubs(n: number): string {
+  return `${n} subscriber${n === 1 ? "" : "s"}`;
+}
+
+function failedSuffix(failed: number): string {
+  return failed ? ` ${failed} failed.` : "";
+}
+
+function buildSaveMessage(
+  clear: boolean,
+  notified?: { sent: number; failed: number }
+): string {
+  if (clear) return "Cleared.";
+  if (notified) return `Saved. Texted ${pluralSubs(notified.sent)}.${failedSuffix(notified.failed)}`;
+  return "Saved.";
 }
 
 export default function AdminPage() {
@@ -38,6 +66,8 @@ export default function AdminPage() {
           date: clear ? undefined : s.date,
           details: clear ? undefined : s.details,
           clear,
+          notify: clear ? false : s.notify,
+          notifyMessage: clear ? undefined : s.notifyMessage,
         }),
       });
 
@@ -49,12 +79,18 @@ export default function AdminPage() {
           message: data.error || "Something went wrong.",
         }));
       } else {
+        const notified = data.notified as
+          | { sent: number; failed: number }
+          | undefined;
+        const savedMsg = buildSaveMessage(clear, notified);
         setter(day)((prev) => ({
           ...prev,
           status: "success",
-          message: clear ? "Cleared." : "Saved.",
+          message: savedMsg,
           date: clear ? "" : prev.date,
           details: clear ? "" : prev.details,
+          notify: false,
+          notifyMessage: clear ? "" : prev.notifyMessage,
         }));
       }
     } catch {
@@ -106,10 +142,37 @@ export default function AdminPage() {
           />
         </label>
 
+        <label className={styles.checkboxLabel}>
+          <input
+            type="checkbox"
+            checked={s.notify}
+            onChange={(e) => set((p) => ({ ...p, notify: e.target.checked }))}
+          />
+          Text {label} subscribers when I save
+        </label>
+
+        {s.notify && (
+          <label className={styles.label}>
+            Text message
+            <textarea
+              className={styles.textarea}
+              value={s.notifyMessage}
+              rows={3}
+              placeholder={`${label.slice(0, -1)} ride is on! Meet at 6 PM.`}
+              onChange={(e) => set((p) => ({ ...p, notifyMessage: e.target.value }))}
+            />
+          </label>
+        )}
+
         <div className={styles.buttonRow}>
           <button
             className={styles.saveButton}
-            disabled={s.status === "loading" || !s.date || !s.secret}
+            disabled={
+              s.status === "loading" ||
+              !s.date ||
+              !s.secret ||
+              (s.notify && !s.notifyMessage.trim())
+            }
             onClick={() => submit(day)}
           >
             {s.status === "loading" ? "Saving…" : "Save"}
@@ -145,6 +208,10 @@ export default function AdminPage() {
       </p>
       {renderForm("mondays", "Mondays")}
       {renderForm("thursdays", "Thursdays")}
+
+      <Link href="/admin/texts" className={styles.navLink} style={{ marginTop: "1rem" }}>
+        Send a text &amp; view subscribers →
+      </Link>
     </div>
   );
 }

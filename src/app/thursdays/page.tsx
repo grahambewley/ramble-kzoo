@@ -1,4 +1,5 @@
 import RideDetailPage from "../components/RideDetailPage";
+import RideSignupForm from "../components/RideSignupForm";
 import styles from "../components/RideDetailPage.module.css";
 import { getUpcomingRides } from "@/lib/upcoming-rides";
 
@@ -27,6 +28,7 @@ export default async function ThursdaysPage() {
           DM me
         </a>
       </div>
+      <RideSignupForm defaultRides={["thursdays"]} theme="light" />
       <div className={styles.detailRow}>
         <span className="material-symbols-outlined" aria-hidden="true">
           schedule

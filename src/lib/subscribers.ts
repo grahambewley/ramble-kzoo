@@ -80,7 +80,7 @@ export async function getSubscriberCounts(): Promise<{
 export async function addSubscriber(
   phone: string,
   rides: RidePref[]
-): Promise<{ ok: boolean; error?: string }> {
+): Promise<{ ok: boolean; error?: string; created?: boolean; phone?: string }> {
   const normalized = normalizePhone(phone);
   if (!normalized) {
     return { ok: false, error: "Please enter a valid 10-digit US phone number." };
@@ -107,7 +107,7 @@ export async function addSubscriber(
       ),
     };
     await store.setJSON(KEY, updated);
-    return { ok: true };
+    return { ok: true, created: false, phone: normalized };
   }
 
   const updated: SubscriberData = {
@@ -122,5 +122,5 @@ export async function addSubscriber(
   };
 
   await store.setJSON(KEY, updated);
-  return { ok: true };
+  return { ok: true, created: true, phone: normalized };
 }

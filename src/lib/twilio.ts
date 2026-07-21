@@ -7,14 +7,8 @@ export interface SendResult {
   total: number;
 }
 
-/**
- * Send an SMS to a list of subscribers using the configured Twilio account.
- * Throws if Twilio env vars are missing so callers can return a 500.
- */
-export async function sendSmsToSubscribers(
-  message: string,
-  subscribers: Subscriber[]
-): Promise<SendResult> {
+/** Build a configured Twilio client, or throw if env vars are missing. */
+function getClient() {
   const {
     TWILIO_ACCOUNT_SID,
     TWILIO_API_KEY_SID,
@@ -38,17 +32,34 @@ export async function sendSmsToSubscribers(
         accountSid: TWILIO_ACCOUNT_SID,
       })
     : twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
+
+  const sender = TWILIO_MESSAGING_SERVICE_SID
+    ? { messagingServiceSid: TWILIO_MESSAGING_SERVICE_SID }
+    : { from: TWILIO_PHONE_NUMBER };
+
+  return { client, sender };
+}
+
+/** Send a single SMS. Throws if Twilio is not configured or the send fails. */
+export async function sendSms(to: string, message: string): Promise<void> {
+  const { client, sender } = getClient();
+  await client.messages.create({ body: message.trim(), ...sender, to });
+}
+
+/**
+ * Send an SMS to a list of subscribers using the configured Twilio account.
+ * Throws if Twilio env vars are missing so callers can return a 500.
+ */
+export async function sendSmsToSubscribers(
+  message: string,
+  subscribers: Subscriber[]
+): Promise<SendResult> {
+  const { client, sender } = getClient();
   const body = message.trim();
 
   const results = await Promise.allSettled(
     subscribers.map((sub) =>
-      client.messages.create({
-        body,
-        ...(TWILIO_MESSAGING_SERVICE_SID
-          ? { messagingServiceSid: TWILIO_MESSAGING_SERVICE_SID }
-          : { from: TWILIO_PHONE_NUMBER }),
-        to: sub.phone,
-      })
+      client.messages.create({ body, ...sender, to: sub.phone })
     )
   );
 
